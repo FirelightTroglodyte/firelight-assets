@@ -1,0 +1,20 @@
+[
+  {
+    "photo": "img/sample-media.svg",
+    "name_or_handle": "Sam — fictional sample",
+    "city": "Bristol",
+    "product_permalink": "night-bus-goblin-tee"
+  },
+  {
+    "photo": "img/sample-media.svg",
+    "name_or_handle": "Alex — fictional sample",
+    "city": "Zagreb",
+    "product_permalink": "road-creature-cap"
+  },
+  {
+    "photo": "img/sample-media.svg",
+    "name_or_handle": "Jules — fictional sample",
+    "city": "Berlin",
+    "product_permalink": "night-bus-goblin-tee"
+  }
+]

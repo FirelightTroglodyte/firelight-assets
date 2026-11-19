@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "mara-ink",
+    "name": "Mara Ink",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "lat": 38.7223,
+    "lng": -9.1393,
+    "instagram": "https://www.instagram.com/example/",
+    "bio": "Fictional sample artist. Makes hand-pulled gig prints full of desert creatures, midnight colour and slightly wonky lettering.",
+    "portrait": "img/sample-media.svg",
+    "artist_permalink": "mara-ink",
+    "collab_titles": ["Night Bus Goblin"]
+  },
+  {
+    "slug": "luca-sunpress",
+    "name": "Luca Sunpress",
+    "city": "Bologna",
+    "country": "Italy",
+    "lat": 44.4949,
+    "lng": 11.3426,
+    "instagram": "https://www.instagram.com/example/",
+    "bio": "Fictional sample artist. A screen-print obsessive collecting strange roadside signs and turning them into wearable souvenirs.",
+    "portrait": "img/sample-media.svg",
+    "artist_permalink": "luca-sunpress",
+    "collab_titles": ["Road Creature Cap"]
+  },
+  {
+    "slug": "noa-paper-moon",
+    "name": "Noa Paper Moon",
+    "city": "Melbourne",
+    "country": "Australia",
+    "lat": -37.8136,
+    "lng": 144.9631,
+    "instagram": "https://www.instagram.com/example/",
+    "bio": "Fictional sample artist. Draws tiny monsters and enormous imaginary landscapes between late-night records and early-morning coffees.",
+    "portrait": "img/sample-media.svg",
+    "artist_permalink": "noa-paper-moon",
+    "collab_titles": ["Long Way Home"]
+  }
+]

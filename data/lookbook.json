@@ -1,0 +1,20 @@
+[
+  {
+    "image": "img/sample-media.svg",
+    "caption": "Fictional sample: last light, first bus, favourite shirt.",
+    "location": "Lisbon, Portugal",
+    "products": ["night-bus-goblin-tee", "road-creature-cap"]
+  },
+  {
+    "image": "img/sample-media.svg",
+    "caption": "Fictional sample: a print-shop afternoon before the doors open.",
+    "location": "Bologna, Italy",
+    "products": ["road-creature-cap", "long-way-home-poster"]
+  },
+  {
+    "image": "img/sample-media.svg",
+    "caption": "Fictional sample: taking the long way home, obviously.",
+    "location": "Melbourne, Australia",
+    "products": ["night-bus-goblin-tee", "long-way-home-poster"]
+  }
+]

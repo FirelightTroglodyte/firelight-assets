@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Sample media placeholder</title>
+  <desc id="desc">Pink and cream sample artwork, not a product photo or artist portrait.</desc>
+  <rect width="640" height="640" fill="#f4ecd9"/>
+  <path d="M0 80 640 560M0 240 640 80M0 560 640 240" stroke="#eb71aa" stroke-width="64"/>
+  <rect x="90" y="240" width="460" height="160" fill="#24221e"/>
+  <text x="320" y="310" text-anchor="middle" font-family="monospace" font-size="36" fill="#f4ecd9">SAMPLE MEDIA</text>
+  <text x="320" y="355" text-anchor="middle" font-family="monospace" font-size="20" fill="#eb71aa">REPLACE BEFORE GOING LIVE</text>
+</svg>

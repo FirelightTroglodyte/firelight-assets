@@ -1,0 +1,35 @@
+[
+  {
+    "date": "2025-05-16",
+    "band": "King Gizzard & the Lizard Wizard",
+    "venue": "The Lantern Room",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "lat": 38.7223,
+    "lng": -9.1393,
+    "photo": "img/sample-media.svg",
+    "memory": "Fictional sample show, not a tour record. Missed the last tram, found three new friends and traded a poster for breakfast."
+  },
+  {
+    "date": "2025-06-07",
+    "band": "King Gizzard & the Lizard Wizard",
+    "venue": "Officina Sonora",
+    "city": "Bologna",
+    "country": "Italy",
+    "lat": 44.4949,
+    "lng": 11.3426,
+    "photo": "img/sample-media.svg",
+    "memory": "Fictional sample show, not a tour record. A handwritten setlist survived the rain. Our cardboard merch sign did not."
+  },
+  {
+    "date": "2025-11-22",
+    "band": "King Gizzard & the Lizard Wizard",
+    "venue": "Paper Moon Hall",
+    "city": "Melbourne",
+    "country": "Australia",
+    "lat": -37.8136,
+    "lng": 144.9631,
+    "photo": "img/sample-media.svg",
+    "memory": "Fictional sample show, not a tour record. Left with ringing ears, a pocket full of stickers and someone else's excellent gig recommendations."
+  }
+]
