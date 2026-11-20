@@ -32,3 +32,11 @@ Its upstream family is `ofl/notosanssymbols2` in the Google Fonts repository;
 name. This small subset is self-hosted, not fetched from Google at runtime.
 The theme registers it as `Firelight Symbols` with `unicodeRange: U+29BF`;
 Bungee remains the display face, including its native `→` and `Ń` glyphs.
+
+## Worn Worldwide captions
+
+`caveat-*.woff2` are the official variable-weight Caveat webfont subsets
+for Latin and Cyrillic. They come from the Google Fonts
+[`Caveat:wght@400..700` stylesheet](https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap).
+Keep `caveat-OFL.txt` with these files. The theme loads the needed subsets
+from its own `ASSET_BASE`, only for Worn Worldwide captions.

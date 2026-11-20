@@ -20,7 +20,8 @@
     "country_code": "ID",
     "instagram": "",
     "collab_volume": 1,
-    "portrait_variants": {}
+    "portrait_variants": {},
+    "process_photos": []
   },
   {
     "slug": "viktor",
@@ -53,7 +54,8 @@
         "src": "img/artists/viktor-1200.webp",
         "width": 1200
       }
-    }
+    },
+    "process_photos": []
   },
   {
     "slug": "julia",
@@ -85,7 +87,8 @@
         "src": "img/artists/julia-1200.webp",
         "width": 1200
       }
-    }
+    },
+    "process_photos": []
   },
   {
     "slug": "malwina",
@@ -118,6 +121,7 @@
         "src": "img/artists/malwina-800.webp",
         "width": 800
       }
-    }
+    },
+    "process_photos": []
   }
 ]
