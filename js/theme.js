@@ -28,7 +28,7 @@ function initFirelightTheme() {
   const DROP_EDITION_SIZE = null; // An edition total, not an inventory count.
   const DROP_COUNTDOWN_END = ''; // Optional ISO date/time with timezone offset.
 
-  const ASSET_BASE = 'https://cdn.jsdelivr.net/gh/FirelightTroglodyte/firelight-assets@v1.0.2';
+  const ASSET_BASE = 'https://cdn.jsdelivr.net/gh/FirelightTroglodyte/firelight-assets@v1.0.3';
   const assetUrl = path => `${ASSET_BASE.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
   const ORIGINAL_CATEGORY = 'Firelight Original';
   const ARTIST_PREFIX = 'Artist – ';
@@ -713,7 +713,7 @@ function initFirelightTheme() {
     script.src = assetUrl('js/vendor-credits.js');
     const onError = error => console.warn('Firelight: print-shop credits unavailable.', error);
     script.onload = () => window.FirelightVendorCredits.init(assetUrl('data/vendors.json'), {
-      productCredit, permalink: editorial?.dataset.productPermalink, categories, aboutCredits,
+      productCredit, categories, aboutCredits,
     }).catch(onError);
     script.onerror = onError;
     document.head.append(script);

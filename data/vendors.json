@@ -14,7 +14,7 @@
       "city": "Portland",
       "state": "Oregon",
       "state_abbr": "OR",
-      "makes": ["shirts", "hats", "posters"],
+      "makes": ["posters"],
       "website": "",
       "instagram": ""
     },
@@ -27,6 +27,5 @@
       "website": "",
       "instagram": ""
     }
-  },
-  "product_vendors": {}
+  }
 }

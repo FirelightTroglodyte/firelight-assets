@@ -1,11 +1,10 @@
 (() => {
   'use strict';
-  const automatic = [
-    { categories: ['pin', 'pins'], vendor: 'custom-comet', credit: 'Pins by' },
-    { categories: ['poster', 'posters'], vendor: 'seizure-palace', credit: 'Screen printed by' },
+  const categoryCredits = [
+    { categories: ['pins'], vendor: 'custom-comet', credit: 'Pins by' },
+    { categories: ['posters'], vendor: 'seizure-palace', credit: 'Printed by' },
+    { categories: ['shirts', 'caps'], vendor: 'garment-decor', credit: 'Printed by' },
   ];
-  const printShops = new Set(['garment-decor', 'seizure-palace']);
-  const apparel = new Set(['shirt', 'shirts', 'tee', 'tees', 'cap', 'caps', 'hat', 'hats']);
   const locationOf = vendor => `${vendor.city}, ${vendor.state_abbr}`;
   const formatList = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
 
@@ -24,24 +23,22 @@
     return document.createTextNode(vendor.name);
   }
 
-  function renderProduct(target, permalink, categories, { vendors, product_vendors }) {
+  function renderProduct(target, categories, vendors) {
     const types = new Set(categories.map(name => name.trim().toLowerCase()));
-    const rule = automatic.find(item => item.categories.some(category => types.has(category)));
-    const assigned = [...types].some(type => apparel.has(type)) ? product_vendors[permalink] : null;
-    const key = rule?.vendor || (printShops.has(assigned) ? assigned : null);
-    if (!key || !Object.hasOwn(vendors, key)) return;
-    const vendor = vendors[key];
-    target.replaceChildren(`${rule?.credit || 'Printed by'} `, vendorName(vendor), ` in ${locationOf(vendor)}`);
+    const rule = categoryCredits.find(item => item.categories.some(category => types.has(category)));
+    if (!rule || !Object.hasOwn(vendors, rule.vendor)) return;
+    const vendor = vendors[rule.vendor];
+    target.replaceChildren(`${rule.credit} `, vendorName(vendor), ` in ${locationOf(vendor)}`);
     target.hidden = false;
   }
 
-  function renderAbout(target, { vendors }) {
+  function renderAbout(target, vendors) {
     const list = target.querySelector('[data-vendor-list]');
     const rows = Object.values(vendors).map(vendor => {
       const row = document.createElement('li');
       const name = document.createElement('strong');
       name.append(vendorName(vendor));
-      row.append(name, ` — ${locationOf(vendor)} — ${formatList.format(vendor.makes)}`);
+      row.append(name, `, ${locationOf(vendor)}: ${formatList.format(vendor.makes)}`);
       return row;
     });
     if (!rows.length) return;
@@ -49,13 +46,15 @@
     target.hidden = false;
   }
 
-  async function init(url, { productCredit, permalink, categories, aboutCredits }) {
+  async function init(url, { productCredit, categories, aboutCredits }) {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`vendors.json: HTTP ${response.status}`);
     const config = await response.json();
-    if (!config?.vendors || !config?.product_vendors) throw new Error('Invalid print-shop configuration.');
-    if (productCredit) renderProduct(productCredit, permalink, categories, config);
-    if (aboutCredits) renderAbout(aboutCredits, config);
+    if (!config?.vendors || typeof config.vendors !== 'object' || Array.isArray(config.vendors)) {
+      throw new Error('Invalid print-shop configuration.');
+    }
+    if (productCredit) renderProduct(productCredit, categories, config.vendors);
+    if (aboutCredits) renderAbout(aboutCredits, config.vendors);
   }
 
   window.FirelightVendorCredits = Object.freeze({ init });
