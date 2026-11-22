@@ -24,8 +24,8 @@
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const cdn = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet';
   const paused = () => reducedMotion.matches;
-  const artistMarkerUrl = assetUrl('img/goblin-mark-96.webp');
-  const showMarkerArt = '<svg viewBox="0 0 36 36" aria-hidden="true"><path d="M4 8h28v6a4 4 0 0 0 0 8v6H4v-6a4 4 0 0 0 0-8V8Z"/><path class="tour-marker__feature" d="M12 12v2m0 3v2m0 3v2m5-9h10m-10 6h7"/></svg>';
+  const collabMarkerArt = hq => `<svg class="tour-pin" width="28" height="36" viewBox="0 0 28 36" aria-hidden="true"><path d="M14 35C11 31 1 21 1 14a13 13 0 1 1 26 0c0 7-10 17-13 21Z"/><circle cx="14" cy="11" r="4" fill="#fff"/>${hq ? '<text x="14" y="24" text-anchor="middle">HQ</text>' : ''}</svg>`;
+  const showMarkerArt = '<svg class="tour-ticket-pin" width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><path d="M4 8h28v6a4 4 0 0 0 0 8v6H4v-6a4 4 0 0 0 0-8V8Z"/><path class="tour-marker__feature" d="M12 12v2m0 3v2m0 3v2m5-9h10m-10 6h7"/></svg>';
 
   function loadLeaflet() {
     const css = document.createElement('link');
@@ -336,15 +336,10 @@
         const description = cluster ? `${items.length} ${layer === 'shows' ? 'shows' : 'collaborations'} near ${items[0].city}` : describe(items[0], layer);
         const hq = items[0].hq;
         const style = ['tour-marker', `tour-marker--${layer}`, upcoming ? 'tour-marker--future' : '', cluster ? 'tour-marker--cluster' : '', hq ? 'tour-marker--hq' : ''].filter(Boolean).join(' ');
-        const iconImage = hq || (layer === 'collabs' && !cluster) ? document.createElement('img') : null;
-        if (iconImage) {
-          iconImage.src = artistMarkerUrl;
-          iconImage.alt = '';
-          iconImage.draggable = false;
-          if (!hq) iconImage.className = 'tour-marker__artist-art';
-        }
-        const icon = L.divIcon({ className: style, iconSize: [44, 44], iconAnchor: [22, 22],
-          html: iconImage || (cluster ? `<span aria-hidden="true">${items.length}</span>` : showMarkerArt) });
+        const pin = layer === 'collabs' && !cluster;
+        // Keep 44px hit areas; the pin's tip is at (22, 39) inside that box.
+        const icon = L.divIcon({ className: style, iconSize: [44, 44], iconAnchor: pin ? [22, 39] : [22, 22],
+          html: cluster ? `<span aria-hidden="true">${items.length}</span>` : pin ? collabMarkerArt(hq) : showMarkerArt });
         const position = map.unproject(point, map.getZoom());
         const marker = L.marker(position, { icon, title: description, autoPanOnFocus: false, zIndexOffset: hq ? 200 : 0 });
         marker.on('add', () => {

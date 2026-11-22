@@ -28,7 +28,7 @@ function initFirelightTheme() {
   const DROP_EDITION_SIZE = null; // An edition total, not an inventory count.
   const DROP_COUNTDOWN_END = ''; // Optional ISO date/time with timezone offset.
 
-  const ASSET_BASE = 'https://cdn.jsdelivr.net/gh/FirelightTroglodyte/firelight-assets@v1.0.0';
+  const ASSET_BASE = 'https://cdn.jsdelivr.net/gh/FirelightTroglodyte/firelight-assets@v1.0.1';
   const assetUrl = path => `${ASSET_BASE.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
   const ORIGINAL_CATEGORY = 'Firelight Original';
   const ARTIST_PREFIX = 'Artist – ';
