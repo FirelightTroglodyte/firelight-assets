@@ -1,0 +1,32 @@
+{
+  "vendors": {
+    "garment-decor": {
+      "name": "Garment Decor",
+      "city": "Montclair",
+      "state": "California",
+      "state_abbr": "CA",
+      "makes": ["shirts", "hats"],
+      "website": "",
+      "instagram": ""
+    },
+    "seizure-palace": {
+      "name": "Seizure Palace",
+      "city": "Portland",
+      "state": "Oregon",
+      "state_abbr": "OR",
+      "makes": ["shirts", "hats", "posters"],
+      "website": "",
+      "instagram": ""
+    },
+    "custom-comet": {
+      "name": "Custom Comet",
+      "city": "Portland",
+      "state": "Oregon",
+      "state_abbr": "OR",
+      "makes": ["pins"],
+      "website": "",
+      "instagram": ""
+    }
+  },
+  "product_vendors": {}
+}
